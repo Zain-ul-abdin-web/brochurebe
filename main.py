@@ -83,7 +83,3 @@ def retrieve_message_responses(thread_id: str,message_id: str):
         return Message(role=first_message.role,content=first_message.content[0].text.value)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-# Run the app on 8800 port
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app",host="0.0.0.0",port=8800)
